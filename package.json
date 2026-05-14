@@ -1,0 +1,28 @@
+{
+  "name": "@davidwcmorris/pivot",
+  "version": "1.0.0",
+  "description": "A minimalist library for pivoting data by 1-n dimensions.",
+  "files": [
+    "lib"
+  ],
+  "main": "./lib/node/index.js",
+  "types": "./lib/node/index.d.ts",
+  "scripts": {
+    "build": "tsc && webpack",
+    "prepublishOnly": "npm run build"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidwcmorris/pivot.git"
+  },
+  "devDependencies": {
+    "typescript": "latest",
+    "webpack-cli": "latest"
+  },
+  "dependencies": {
+    "@davidwcmorris/types": "latest"
+  }
+}
