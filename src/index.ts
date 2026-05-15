@@ -1,7 +1,7 @@
 /**
  * A minimal library for pivoting data by 1-n dimensions.
  * 
- * The {@link pivot} function slices data and dices data by one or more {@link Dimension dimensions}, returning a {@link Cube}, which is a nested array as deep as the number of dimensions passed into the {@link pivot} operstion.
+ * The {@link pivot} function slices data and dices data by one or more dimensions, returning a {@link Cube}, which is a nested array as deep as the number of dimensions passed into the {@link pivot} operstion.
  * 
  * Simple {@link Dimension dimensions} can be created by mapping a set of values using the {@link property} function or a custom mapping function.
  * 
