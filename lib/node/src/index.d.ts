@@ -1,7 +1,7 @@
 /**
  * A minimal library for pivoting data by 1-n dimensions.
  *
- * The {@link pivot} function slices data and dices data by one or more {@link Dimension dimensions}, returning a {@link Cube}, which is a nested array as deep as the number of dimensions passed into the {@link pivot} operstion.
+ * The {@link pivot} function slices data and dices data by one or more dimensions, returning a {@link Cube}, which is a nested array as deep as the number of dimensions passed into the {@link pivot} operstion.
  *
  * Simple {@link Dimension dimensions} can be created by mapping a set of values using the {@link property} function or a custom mapping function.
  *
@@ -38,7 +38,8 @@ export declare const property: <TElement>(key: keyof TElement) => Func<Predicate
  * @param elements The elements to pivot.
  * @param dimensions The dimensions to slice and dice the data by.
  * @returns Returns an Cube, which is an n-dimensional array mirroring the number of dimensions plus the set of elements.
- */
+ * @category Cube building
+*/
 export declare function pivot<TElement, TDimensions extends readonly [Dimension<TElement>, ...Dimension<TElement>[]]>(elements: readonly TElement[], ...[first, second, ...others]: TDimensions): Cube<TElement, TDimensions>;
 /**
  * Queries data from a {@link Cube} using a selector function to transform the elements in each cell into a result.

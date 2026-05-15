@@ -43,7 +43,8 @@ export const property = <TElement>(key: keyof TElement): Func<Predicate<readonly
  * @param elements The elements to pivot.
  * @param dimensions The dimensions to slice and dice the data by.
  * @returns Returns an Cube, which is an n-dimensional array mirroring the number of dimensions plus the set of elements.
- */
+ * @category Cube building
+*/
 export function pivot<TElement, TDimensions extends readonly [Dimension<TElement>, ...Dimension<TElement>[]]>(elements: readonly TElement[], ...[first, second, ...others]: TDimensions): Cube<TElement, TDimensions> {
 	return (second ? slice(elements, first).map(vector => pivot(vector, second, ...others)) : slice(elements, first)) as Cube<TElement, TDimensions>;
 }
