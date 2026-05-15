@@ -1,0 +1,1 @@
+{"version":3,"file":"fulham.d.ts","sourceRoot":"./src/","sources":["src/example/fulham.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,MAAM;IACtB,KAAK,EAAE,MAAM,CAAC;IACd,QAAQ,EAAE,MAAM,CAAC;IACjB,SAAS,EAAE,MAAM,CAAC;IAClB,UAAU,EAAE,MAAM,CAAC;IACnB,OAAO,EAAE,MAAM,CAAC;IAChB,WAAW,EAAE,IAAI,CAAA;CACjB;AAED,eAAO,MAAM,KAAK,EAAE,MAAM,EA2BzB,CAAC"}

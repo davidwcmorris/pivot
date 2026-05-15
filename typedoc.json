@@ -1,0 +1,10 @@
+{
+    "entryPoints": [
+        "./src/index.ts"
+    ],
+    "readme": "none",
+    "excludeExternals": true,
+    "excludePrivate": true,
+    "name": "@davidwcmorris/pivot",
+    "out": "docs/api/"
+}

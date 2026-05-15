@@ -8,7 +8,8 @@
   "main": "./lib/node/index.js",
   "types": "./lib/node/index.d.ts",
   "scripts": {
-    "build": "tsc && webpack && cp lib/web/*.js docs/dist",
+    "build": "tsc && webpack",
+    "prepublish": "typedoc && cp lib/web/*.js docs/dist",
     "prepublishOnly": "npm run build"
   },
   "publishConfig": {
@@ -19,6 +20,7 @@
     "url": "git+https://github.com/davidwcmorris/pivot.git"
   },
   "devDependencies": {
+    "typedoc": "latest",
     "typescript": "latest",
     "webpack-cli": "latest"
   },
