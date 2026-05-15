@@ -11,6 +11,12 @@
  */
 import { Func, Predicate } from "@davidwcmorris/types";
 /**
+ * A dimension is a set of {@link Predicate} used to partition data.
+ * @typeParam TElement The type of the source data that the {@link Dimension} was created for.
+ * @category Type declarations
+ */
+export type Dimension<TElement> = readonly Predicate<readonly [TElement]>[];
+/**
  * A Cube is an n-dimensional data structure.
  * Each {@link Dimension} adds one array level.
  * @typeParam TElement The source element type.
@@ -19,23 +25,19 @@ import { Func, Predicate } from "@davidwcmorris/types";
  */
 export type Cube<TElement, TDimensions extends readonly unknown[]> = TDimensions extends readonly [unknown, ...infer TRest] ? Cube<TElement[], TRest> : TElement[];
 /**
- * A dimension is a set of {@link Predicate} used to partition data.
- * @typeParam TElement The type of the source data that the {@link Dimension} was created for.
- * @category Type declarations
- */
-export type Dimension<TElement> = readonly Predicate<readonly [TElement]>[];
-/**
  * Creates a predicate function {@link Predicate} for use in the {@link dimension} function to create a {@link Dimension} matching properties.
- * @typeParam TElement The type of the source data that will be evaluated by the generated predicate.
+ * @typeParam TElement The type of the source data that will be evaluated by the generated predicate. This is generally not inferred, so is recommended to provide.
  * @param key The property in the source data to base this {@link Predicate} on.
  * @category Cube building
  */
 export declare const property: <TElement>(key: keyof TElement) => Func<Predicate<readonly [TElement]>, readonly [TElement[keyof TElement]]>;
 /**
- * Slices and dices a set of elements based on the criteria defined in one or more dimensions
- * @param elements The elements to pivot
- * @param dimensions The dimensions to slice and dice the data by
- * @returns Returns an Cube, which is an n-dimensional array mirroring the number of dimensions plus the set of elements
+ * Slices and dices a set of elements based on the criteria defined in one or more dimensions.
+ * @typeParam TElement The type of the source data that will be evaluated by the generated predicates. This is inferred from the elements passed into the function.
+ * @typeParam TDimensions The tuple type of the dimensions to pivot by; this dictates the shaper of the resulting {@link Cube}. This is inferred from the dimensions passed into the function.
+ * @param elements The elements to pivot.
+ * @param dimensions The dimensions to slice and dice the data by.
+ * @returns Returns an Cube, which is an n-dimensional array mirroring the number of dimensions plus the set of elements.
  */
 export declare function pivot<TElement, TDimensions extends readonly [Dimension<TElement>, ...Dimension<TElement>[]]>(elements: readonly TElement[], ...[first, second, ...others]: TDimensions): Cube<TElement, TDimensions>;
 /**

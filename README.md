@@ -23,7 +23,7 @@ The documentation can be found [here](http://steelbreeze.net/pivot/api/v4), and 
 ## Example
 See src/example/index.ts for a complete example, but the crux of it is here:
 ```typescript
-import { property, pivot, aggregate, average } from '@steelbreeze/pivot';
+import { property, pivot, aggregate, average } from '@davidwcmorris/pivot';
 import { Player, squad } from './fulham';
 import { distinct } from './distinct';
 
